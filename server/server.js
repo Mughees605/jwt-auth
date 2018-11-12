@@ -1,6 +1,7 @@
 require('./config/config');
 
 const express = require('express');
+var cors = require('cors')
 const bodyParser = require('body-parser');
 const todo = require('./todo/index');
 const user = require('./user/index');
@@ -8,6 +9,7 @@ const port = process.env.PORT;
 
 var { mongoose } = require('./db/mongoose');
 var app = express();
+app.use(cors())
 
 app.use(bodyParser.json());
 
